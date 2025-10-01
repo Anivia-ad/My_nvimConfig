@@ -70,7 +70,7 @@ dap.adapters.codelldb = {
 -- C++ configuration
 dap.configurations.cpp = {
   {
-    name = "Launch file",
+    name = "C++: Launch file",
     type = "codelldb",
     request = "launch",
     program = function()
@@ -82,7 +82,7 @@ dap.configurations.cpp = {
     runInTerminal = false,
   },
   {
-    name = "Attach to process",
+    name = "C++: Attach to process",
     type = "codelldb",
     request = "attach",
     pid = require("dap.utils").pick_process,
@@ -91,12 +91,32 @@ dap.configurations.cpp = {
 }
 
 -- C configuration (same as C++)
-dap.configurations.c = dap.configurations.cpp
+dap.configurations.c = {
+  {
+    name = "C: Launch file",
+    type = "codelldb",
+    request = "launch",
+    program = function()
+      return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+    end,
+    cwd = "${workspaceFolder}",
+    stopOnEntry = false,
+    args = {},
+    runInTerminal = false,
+  },
+  {
+    name = "C: Attach to process",
+    type = "codelldb",
+    request = "attach",
+    pid = require("dap.utils").pick_process,
+    cwd = "${workspaceFolder}",
+  },
+}
 
 -- Rust configuration
 dap.configurations.rust = {
   {
-    name = "Launch file",
+    name = "Rust: Launch file",
     type = "codelldb",
     request = "launch",
     program = function()
@@ -108,7 +128,7 @@ dap.configurations.rust = {
     runInTerminal = false,
   },
   {
-    name = "Attach to process",
+    name = "Rust: Attach to process",
     type = "codelldb",
     request = "attach",
     pid = require("dap.utils").pick_process,
