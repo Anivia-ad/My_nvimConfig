@@ -5,7 +5,7 @@ return {
     event = "VeryLazy",
     init = function()
       vim.g.VM_maps = {
-        ["Find Under"] = "<C-m>",           -- Ctrl+d 选择下一个相同单词
+        ["Find Under"] = "<C-m>",           -- Ctrl+m 选择下一个相同单词
         ["Find Subword Under"] = "<C-m>",
         ["Select All"] = "<C-S-l>",         -- Ctrl+Shift+l 选择所有
         ["Skip Region"] = "<C-x>",          -- Ctrl+x 跳过当前
