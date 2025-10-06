@@ -17,3 +17,14 @@ vim.api.nvim_create_autocmd(
   { "BufLeave", "FocusLost", "InsertEnter" },
   { group = numbertoggle, command = "set norelativenumber" }
 )
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = '复制后高亮显示',
+  group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank({
+      higroup = 'IncSearch',  -- 使用的高亮组
+      timeout = 400,           -- 高亮持续时间(毫秒)
+    })
+  end,
+})
