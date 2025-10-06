@@ -31,7 +31,8 @@ api.nvim_create_autocmd("TextYankPost", {
   callback = function()
     vim.highlight.on_yank {
       higroup = "YankHighlight", -- 使用自定义高亮组
-      timeout = 200, -- 高亮持续时间(毫秒)
+      timeout = 400, -- 高亮持续时间(毫秒)
     }
   end,
 })
+
