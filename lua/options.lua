@@ -1,6 +1,6 @@
 require "nvchad.options"
--- WSL 剪贴板配置
 
+-- WSL 剪贴板配置
 vim.g.clipboard = {
   name = "WslClipboard",
   copy = {
@@ -13,7 +13,6 @@ vim.g.clipboard = {
   },
   cache_enabled = 0,
 }
--- add yours here!
 
 -- local o = vim.o
 -- o.cursorlineopt ='both' -- to enable cursorline!

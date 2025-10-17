@@ -33,14 +33,6 @@ map("c", "jk", "<C-c>", { desc = "取消命令并退出" })
 map("t", "jk", "<C-\\><C-n>", { desc = "退出终端模式" })
 
 -- ============================
---        Copilot 快捷键
--- ============================
-
-map("i", "<C-l>", function()
-  vim.fn.feedkeys(vim.fn["copilot#Accept"](), "")
-end, { desc = "接受 Copilot 建议", noremap = true, silent = true })
-
--- ============================
 --        行移动快捷键
 -- ============================
 
